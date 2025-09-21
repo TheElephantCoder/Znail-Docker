@@ -1,0 +1,23 @@
+{
+  "name": "Znail Dev",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "moby": false
+    }
+  },
+  "forwardPorts": [5000],
+  "portsAttributes": {
+    "5000": {
+      "label": "Znail UI",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "postCreateCommand": "docker build -t znail-local .",
+  "postStartCommand": "docker run -d --name znail -p 5000:5000 --restart unless-stopped znail-local || true",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-azuretools.vscode-docker", "github.vscode-github-actions"]
+    }
+  },
+  "remoteUser": "vscode"
+}

@@ -37,7 +37,7 @@ docker run -d --name znail   --net=host   --privileged   --restart unless-stoppe
 ``` yaml
 services:
   znail:
-    image: ghcr.io/TheElephantCoder/znail:latest
+    image: ghcr.io/TheElephantCoder/znail-dockerized:latest
     container_name: znail
     network_mode: host
     privileged: true

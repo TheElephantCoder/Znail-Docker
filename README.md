@@ -139,7 +139,7 @@ Znail-Dockerized is **not a fork of Znail itself**, but a containerization proje
   - [Gunicorn](https://gunicorn.org/) – WSGI server for production  
   - [Docker Buildx](https://docs.docker.com/buildx/working-with-buildx/) – multi-arch image builds
 
-If you use or build on this image, please consider ⭐ starring the [original Znail repository](https://github.com/znailnetem/znail) to support the upstream project.
+If you use or build on this image, please consider ⭐ starring the [original Znail repository](https://github.com/znailnetem/znail) to support the upstream project. All proceeds from Sponsorships for this repo will go to the original Znail Repository.
 
 ------------------------------------------------------------------------
 

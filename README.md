@@ -116,4 +116,25 @@ curl -sf http://localhost:5000/healthz
 
 ------------------------------------------------------------------------
 
+## 🙏 Credits
+
+Znail-Dockerized is **not a fork of Znail itself**, but a containerization project to make it easier to run Znail in Docker.
+
+- **Znail Network Emulator**  
+  Created and maintained by the [Znail team](https://github.com/znailnetem/znail).  
+  This project would not exist without their excellent work on the emulator.
+
+- **Dockerization & Multi-Arch Build**  
+  Packaged and maintained by [TheElephantCoder](https://github.com/TheElephantCoder).
+
+- **Libraries / Tools**  
+  - [Flask](https://palletsprojects.com/p/flask/) – web framework  
+  - [Flask-RESTX](https://github.com/python-restx/flask-restx) – API toolkit (used as replacement for flask-restplus)  
+  - [Gunicorn](https://gunicorn.org/) – WSGI server for production  
+  - [Docker Buildx](https://docs.docker.com/buildx/working-with-buildx/) – multi-arch image builds
+
+If you use or build on this image, please consider ⭐ starring the [original Znail repository](https://github.com/znailnetem/znail) to support the upstream project.
+
+------------------------------------------------------------------------
+
 🎯 Now you're ready to emulate networks with **Znail in Docker**! 🎯

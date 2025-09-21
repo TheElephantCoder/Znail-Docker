@@ -37,7 +37,7 @@ docker run -d --name znail   --net=host   --privileged   --restart unless-stoppe
 ``` yaml
 services:
   znail:
-    image: ghcr.io/<org-or-user>/znail:latest
+    image: ghcr.io/TheElephantCoder/znail:latest
     container_name: znail
     network_mode: host
     privileged: true
@@ -55,7 +55,7 @@ docker compose up -d
 
 You can open this project directly in a GitHub Codespace and test the Docker image:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=Znail-DockerImage&owner=TheElephantCoder)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=Znail-Dockerized&owner=TheElephantCoder)
 
 
 > ⚠️ Note: In GitHub Codespaces the container runs without `--privileged` and `--net=host`, so you’ll only see the web UI (not real netem functionality). On a Pi or Linux host, run with:
@@ -64,7 +64,7 @@ You can open this project directly in a GitHub Codespace and test the Docker ima
 >   --net=host \
 >   --privileged \
 >   --restart unless-stopped \
->   ghcr.io/TheElephantCoder/znail-dockerimage:latest
+>   ghcr.io/TheElephantCoder/znail-dockerized:latest
 > ```
 
 ------------------------------------------------------------------------

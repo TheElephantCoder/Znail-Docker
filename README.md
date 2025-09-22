@@ -30,7 +30,7 @@ including **Raspberry Pi** 🥧.
 ### 🔹 Quick Start
 
 ``` bash
-docker run -d --name znail   --net=host   --privileged   --restart unless-stopped   ghcr.io/<org-or-user>/znail:latest
+docker run -d --name znail   --net=host   --privileged   --restart unless-stopped   ghcr.io/TheElephantCoder/znail-docker:latest
 ```
 
 👉 Open your browser: <http://localhost:5000>\
@@ -43,8 +43,8 @@ docker run -d --name znail   --net=host   --privileged   --restart unless-stoppe
 ``` yaml
 services:
   znail:
-    image: ghcr.io/TheElephantCoder/znail-dockerized:latest
-    container_name: znail
+    image: ghcr.io/TheElephantCoder/znail-docker:latest
+    container_name: znail-docker
     network_mode: host
     privileged: true
     restart: unless-stopped
@@ -61,16 +61,16 @@ docker compose up -d
 
 You can open this project directly in a GitHub Codespace and test the Docker image:
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=Znail-Dockerized&owner=TheElephantCoder)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=Znail-Docker&owner=TheElephantCoder)
 
 
 > ⚠️ Note: In GitHub Codespaces the container runs without `--privileged` and `--net=host`, so you’ll only see the web UI (not real netem functionality). On a Pi or Linux host, run with:
 > ```bash
-> docker run -d --name znail \
+> docker run -d --name znail-docker \
 >   --net=host \
 >   --privileged \
 >   --restart unless-stopped \
->   ghcr.io/TheElephantCoder/znail-dockerized:latest
+>   ghcr.io/TheElephantCoder/znail-docker:latest
 > ```
 
 ------------------------------------------------------------------------
@@ -96,7 +96,7 @@ Multi-arch build (e.g., amd64, arm64, arm/v7):
 docker buildx create --use --name znailbuilder
 docker run --privileged --rm tonistiigi/binfmt --install all
 
-docker buildx build   --platform linux/amd64,linux/arm64,linux/arm/v7   -t ghcr.io/<org-or-user>/znail:latest   --push .
+docker buildx build   --platform linux/amd64,linux/arm64,linux/arm/v7   -t ghcr.io/znailnetem/znail:latest   --push .
 ```
 
 ------------------------------------------------------------------------
@@ -124,7 +124,7 @@ curl -sf http://localhost:5000/healthz
 
 ## 🙏 Credits
 
-Znail-Dockerized is **not a fork of Znail itself**, but a containerization project to make it easier to run Znail in Docker.
+Znail-Docker is **not a fork of Znail itself**, but a containerization project to make it easier to run Znail in Docker.
 
 - **Znail Network Emulator**  
   Created and maintained by the [Znail team](https://github.com/znailnetem/znail).  

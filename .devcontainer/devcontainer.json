@@ -9,8 +9,8 @@
   "portsAttributes": {
     "5000": { "label": "Znail UI", "onAutoForward": "openBrowser" }
   },
-  "postCreateCommand": "docker pull ghcr.io/theelephantcoder/znail-dockerized:v0.1.0-beta || docker pull ghcr.io/theelephantcoder/znail-dockerized:latest",
-  "postStartCommand": "docker rm -f znail >/dev/null 2>&1 || true && docker run -d --name znail-dockerized -p 5000:5000 --restart unless-stopped ghcr.io/theelephantcoder/znail-dockerized:v0.1.0-beta || docker run -d --name znail -p 5000:5000 --restart unless-stopped ghcr.io/theelephantcoder/znail-dockerized:latest",
+  "postCreateCommand": "docker pull ghcr.io/theelephantcoder/znail-docker:v0.1.0-beta || docker pull ghcr.io/theelephantcoder/znail-docker:latest",
+  "postStartCommand": "docker rm -f znail >/dev/null 2>&1 || true && docker run -d --name znail-dockerized -p 5000:5000 --restart unless-stopped ghcr.io/theelephantcoder/znail-docker:v0.1.0-beta || docker run -d --name znail-docker -p 5000:5000 --restart unless-stopped ghcr.io/theelephantcoder/znail-docker:latest",
   "customizations": {
     "vscode": {
       "extensions": ["ms-azuretools.vscode-docker", "github.vscode-github-actions"]

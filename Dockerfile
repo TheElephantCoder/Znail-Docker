@@ -1,14 +1,14 @@
 # Dockerfile – builds a complete Znail image without needing znail/ in this repo
 FROM python:3.11-slim
 
-# OS deps (netem tools included; harmless in CI/Codespaces)
+# OS deps (include netem tools; harmless in CI/Codespaces)
 RUN apt-get update && apt-get install -y --no-install-recommends \
       git iproute2 iptables ethtool bridge-utils dnsmasq procps curl \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-# ----- Python deps from this repo (pinned) -----
+# ---------- Python deps from this repo (pinned) ----------
 COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
@@ -16,9 +16,10 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 RUN pip install --no-cache-dir flask-restx gunicorn
 RUN printf "from flask_restx import *\n" > /app/flask_restplus.py
 
-# ----- Fetch Znail source from upstream (no local znail/ needed) -----
+# ---------- Fetch Znail source from upstream ----------
+# NOTE: upstream default branch is 'master' (NOT 'main')
 ARG ZNAIL_REPO=https://github.com/znailnetem/znail.git
-ARG ZNAIL_REF=main
+ARG ZNAIL_REF=master
 RUN git clone --depth 1 --branch "${ZNAIL_REF}" "${ZNAIL_REPO}" /app/src
 
 # WSGI wrapper to expose the Flask app + /healthz

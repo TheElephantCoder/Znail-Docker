@@ -9,7 +9,7 @@ flask-restx==1.3.0
 # Gunicorn WSGI server
 gunicorn==21.2.0
 
-# Other common deps (if not already pulled in by flask-restx)
+# Compatibility pins commonly needed with modern Flask
 Werkzeug==2.3.7
 itsdangerous==2.1.2
 Jinja2==3.1.2

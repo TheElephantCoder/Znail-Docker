@@ -22,6 +22,9 @@ ARG ZNAIL_REPO=https://github.com/znailnetem/znail.git
 ARG ZNAIL_REF=master
 RUN git clone --depth 1 --branch "${ZNAIL_REF}" "${ZNAIL_REPO}" /app/src
 
+# After cloning:
+RUN if [ -f /app/src/requirements.txt ]; then pip install --no-cache-dir -r /app/src/requirements.txt || true; fi
+
 # WSGI wrapper to expose the Flask app + /healthz
 COPY wsgi.py /app/src/wsgi.py
 
